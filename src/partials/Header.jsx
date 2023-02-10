@@ -1,15 +1,29 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import Dropdown from '../utils/Dropdown';
+//import Dropdown from '../utils/Dropdown';
 import LogoImage from '../images/logo.svg';
 
 function Header() {
 
+	const [navBgShown, setNavBgShown] = useState(false);
 	const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
 	const trigger = useRef(null);
 	const mobileNav = useRef(null);
+
+	// show nav bar background when scroll over 80
+	const updateNavBgShown = () => {
+		if (window.scrollY >= 80) {
+			setNavBgShown(true);
+		} else {
+			setNavBgShown(false);
+		}
+	}
+	useEffect(() => {
+		updateNavBgShown();
+		window.addEventListener("scroll", updateNavBgShown);
+	});
 
 	// close the mobile menu on click outside
 	useEffect(() => {
@@ -33,15 +47,15 @@ function Header() {
 	});
 
 	return (
-		<header className="fixed w-full z-30 bg-white/50">
+		<header className={`fixed w-full z-30 ${navBgShown && 'bg-white shadow-lg'}`}>
 			<div className="max-w-6xl mx-auto px-4 sm:px-6">
-				<div className="flex items-center justify-between h-20">
+				<div className="flex items-center justify-between h-16 font-AtypDisplay-Medium font-semibold">
 
 					{/* Site branding */}
 					<div className="shrink-0 mr-4">
 						{/* Logo */}
 						<Link to="/" className="block" aria-label="HLP Studio">
-							<img src={LogoImage} className="h-12" />
+							<img src={LogoImage} className="h-10" />
 						</Link>
 					</div>
 
@@ -49,7 +63,7 @@ function Header() {
 					<nav className="hidden md:flex md:grow">
 
 						{/* Desktop menu links */}
-						<ul className="flex grow justify-end flex-wrap items-center text-xl font-medium">
+						<ul className="flex grow justify-end flex-wrap items-center text-base">
 							<li>
 								<Link to="/portfolio" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">
 									Portfolio
@@ -62,10 +76,10 @@ function Header() {
 								<Link to="/blog" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">Blog</Link>
 							</li>
 							<li>
-								<Link to="/about" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">About us</Link>
+								<Link to="/about" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">About Us</Link>
 							</li>
 							<li>
-								<Link to="/contact" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">Contact us</Link>
+								<Link to="/contact" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">Contact Us</Link>
 							</li>
 						</ul>
 
@@ -96,7 +110,7 @@ function Header() {
 						{/* Hamburger button */}
 						<button ref={trigger} className={`hamburger ${mobileNavOpen && 'active'}`} aria-controls="mobile-nav" aria-expanded={mobileNavOpen} onClick={() => setMobileNavOpen(!mobileNavOpen)}>
 							<span className="sr-only">Menu</span>
-							<svg className="w-6 h-6 fill-current text-gray-300 hover:text-gray-200 transition duration-150 ease-in-out" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<svg className="w-6 h-6 fill-current text-black hover:text-purple-600 transition duration-150 ease-in-out" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<rect y="4" width="24" height="2" rx="1" />
 								<rect y="11" width="24" height="2" rx="1" />
 								<rect y="18" width="24" height="2" rx="1" />
@@ -104,28 +118,33 @@ function Header() {
 						</button>
 
 						{/*Mobile navigation */}
-						<nav id="mobile-nav" ref={mobileNav} className="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out" style={mobileNavOpen ? { maxHeight: mobileNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: .8 }}>
-							<ul className="bg-gray-800 px-4 py-2">
+						<nav
+							id="mobile-nav"
+							ref={mobileNav}
+							className="absolute bg-white shadow-lg top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out"
+							style={mobileNavOpen ? { maxHeight: mobileNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: .8 }}
+						>
+							<ul className="px-4 py-2">
 								<li>
-									<Link to="/portfolio" className="flex text-gray-300 hover:text-gray-200 py-2">Portfolio</Link>
+									<Link to="/portfolio" className="flex text-black hover:text-purple-600 py-2 justify-center">Portfolio</Link>
 								</li>
 								<li>
-									<Link to="/pricing" className="flex text-gray-300 hover:text-gray-200 py-2">Pricing</Link>
+									<Link to="/pricing" className="flex text-black hover:text-purple-600 py-2 justify-center">Pricing</Link>
 								</li>
 								<li>
-									<Link to="/blog" className="flex text-gray-300 hover:text-gray-200 py-2">Blog</Link>
+									<Link to="/blog" className="flex text-black hover:text-purple-600 py-2 justify-center">Blog</Link>
 								</li>
 								<li>
-									<Link to="/about" className="flex text-gray-300 hover:text-gray-200 py-2">About us</Link>
+									<Link to="/about" className="flex text-black hover:text-purple-600 py-2 justify-center">About us</Link>
 								</li>
 								<li>
-									<Link to="/contact" className="flex text-gray-300 hover:text-gray-200 py-2">Contact us</Link>
+									<Link to="/contact" className="flex text-black hover:text-purple-600 py-2 justify-center">Contact us</Link>
 								</li>
 								<li>
-									<Link to="/search" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Search</Link>
+									<Link to="/search" className="flex w-full text-purple-600 hover:text-black py-2 justify-center">Search</Link>
 								</li>
 								<li>
-									<Link to="/link" className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out">Link</Link>
+									<Link to="/link" className="flex w-full text-purple-600 hover:text-black py-2 justify-center">Link</Link>
 								</li>
 							</ul>
 						</nav>

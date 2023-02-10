@@ -35,9 +35,8 @@ module.exports = {
 				'1/1': '100%',
 			},
 			fontFamily: {
-				//inter: ['Inter', 'sans-serif'],
-				//'architects-daughter': ['"Architects Daughter"', 'sans-serif']
-				'futura-std': ['"Futura Std"', 'sans-serif']
+				'AtypDisplay-Medium': ['AtypDisplay-Medium', 'Arial', 'sans-serif'],
+				'ProximaNova': ['Proxima\\ Nova', 'Arial', 'sans-serif']
 			},
 			fontSize: {
 				xs: '0.75rem',
