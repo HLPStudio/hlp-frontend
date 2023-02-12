@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-//import Dropdown from '../utils/Dropdown';
-import LogoImage from '../images/logo.svg';
+import logoImage from '../images/logo.svg';
+import logoImageWhite from '../images/logo-white.svg';
 
 function Header() {
 
@@ -46,6 +46,9 @@ function Header() {
 		return () => document.removeEventListener('keydown', keyHandler);
 	});
 
+	const navLinkClass = `hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out ${navBgShown ? 'text-black' : 'text-white'}`;
+	const navIconClass = `flex justify-center items-center hover:text-purple-600 rounded-full transition duration-150 ease-in-out ${navBgShown ? 'text-black' : 'text-white'}`;
+
 	return (
 		<header className={`fixed w-full z-30 ${navBgShown && 'bg-white shadow-lg'}`}>
 			<div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -55,7 +58,7 @@ function Header() {
 					<div className="shrink-0 mr-4">
 						{/* Logo */}
 						<Link to="/" className="block" aria-label="HLP Studio">
-							<img src={LogoImage} className="h-10" />
+							<img src={navBgShown ? logoImage : logoImageWhite} className="h-10 sepia-0" />
 						</Link>
 					</div>
 
@@ -63,37 +66,32 @@ function Header() {
 					<nav className="hidden md:flex md:grow">
 
 						{/* Desktop menu links */}
-						<ul className="flex grow justify-end flex-wrap items-center text-base">
+						<ul className="flex grow justify-end flex-wrap items-center text-xl">
 							<li>
-								<Link to="/portfolio" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">
-									Portfolio
-								</Link>
+								<Link to="/portfolio" className={navLinkClass}>Portfolio</Link>
 							</li>
 							<li>
-								<Link to="/pricing" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">Pricing</Link>
+								<Link to="/pricing" className={navLinkClass}>Pricing</Link>
 							</li>
 							<li>
-								<Link to="/blog" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">Blog</Link>
+								<Link to="/blog" className={navLinkClass}>Blog</Link>
 							</li>
 							<li>
-								<Link to="/about" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">About Us</Link>
-							</li>
-							<li>
-								<Link to="/contact" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">Contact Us</Link>
+								<Link to="/about" className={navLinkClass}>About Us</Link>
 							</li>
 						</ul>
 
 						{/* Desktop search and link */}
 						<ul className="flex grow justify-end flex-wrap items-center">
 							<li className="ml-4">
-								<Link to="#" className="flex justify-center items-center text-black hover:text-purple-600 rounded-full transition duration-150 ease-in-out" aria-label="Search">
+								<Link to="#" className={navIconClass} aria-label="Search">
 									<svg className="w-6 h-6 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
 										<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
 									</svg>
 								</Link>
 							</li>
 							<li className="ml-4">
-								<Link to="#" className="flex justify-center items-center text-black hover:text-purple-600 rounded-full transition duration-150 ease-in-out" aria-label="Link">
+								<Link to="#" className={navIconClass} aria-label="Link">
 									<svg className="w-7 h-7 rotate-45 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
 										<path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
 										<path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
@@ -110,7 +108,7 @@ function Header() {
 						{/* Hamburger button */}
 						<button ref={trigger} className={`hamburger ${mobileNavOpen && 'active'}`} aria-controls="mobile-nav" aria-expanded={mobileNavOpen} onClick={() => setMobileNavOpen(!mobileNavOpen)}>
 							<span className="sr-only">Menu</span>
-							<svg className="w-6 h-6 fill-current text-black hover:text-purple-600 transition duration-150 ease-in-out" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<svg className={`w-6 h-6 fill-current hover:text-purple-600 transition duration-150 ease-in-out ${navBgShown ? 'text-black' : 'text-white'}`} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<rect y="4" width="24" height="2" rx="1" />
 								<rect y="11" width="24" height="2" rx="1" />
 								<rect y="18" width="24" height="2" rx="1" />

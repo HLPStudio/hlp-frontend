@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from '../partials/Header';
+import Carousel from '../partials/Carousel';
 import PageIllustration from '../partials/PageIllustration';
 import HeroHome from '../partials/HeroHome';
 import FeaturesBlocks from '../partials/FeaturesBlocks';
@@ -24,6 +25,7 @@ function Home() {
 				</div> */}
 
 				{/*  Page sections */}
+				<Carousel />
 				<HeroHome />
 				<FeaturesBlocks />
 				<FeaturesZigZag />
