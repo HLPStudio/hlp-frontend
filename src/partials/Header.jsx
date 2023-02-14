@@ -1,9 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import logoImage from '../images/logo.svg';
-import logoImageWhite from '../images/logo-white.svg';
-
 function Header() {
 
 	const [navBgShown, setNavBgShown] = useState(false);
@@ -58,7 +55,7 @@ function Header() {
 					<div className="shrink-0 mr-4">
 						{/* Logo */}
 						<Link to="/" className="block" aria-label="HLP Studio">
-							<img src={navBgShown ? logoImage : logoImageWhite} className="h-10 sepia-0" />
+							<img src={navBgShown ? '/images/logo.svg' : '/images/logo-white.svg'} className="h-10" />
 						</Link>
 					</div>
 
@@ -66,7 +63,7 @@ function Header() {
 					<nav className="hidden md:flex md:grow">
 
 						{/* Desktop menu links */}
-						<ul className="flex grow justify-end flex-wrap items-center text-xl">
+						<ul className="flex grow justify-end flex-wrap items-center text-lg">
 							<li>
 								<Link to="/portfolio" className={navLinkClass}>Portfolio</Link>
 							</li>

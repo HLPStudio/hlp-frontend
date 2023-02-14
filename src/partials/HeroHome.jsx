@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '../utils/Modal';
 
-import HeroImage from '../images/hero-image-01.jpg';
-
 function HeroHome() {
 	const [videoModalOpen, setVideoModalOpen] = useState(false);
 
@@ -59,7 +57,7 @@ function HeroHome() {
 					{/* Hero image */}
 					<div>
 						<div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
-							<img className="mx-auto" src={HeroImage} width="1024" height="504" alt="Hero" />
+							<img className="mx-auto" src={'/images/hero-image-01.jpg'} width="1024" height="504" alt="Hero" />
 							<a
 								className="absolute group"
 								href="#0"

@@ -2,6 +2,10 @@ import React from 'react';
 
 import Header from '../partials/Header';
 import Carousel from '../partials/Carousel';
+import Services from '../partials/Services';
+import Technologies from '../partials/Technologies';
+import Prouds from '../partials/Prouds';
+
 import PageIllustration from '../partials/PageIllustration';
 import HeroHome from '../partials/HeroHome';
 import FeaturesBlocks from '../partials/FeaturesBlocks';
@@ -26,6 +30,10 @@ function Home() {
 
 				{/*  Page sections */}
 				<Carousel />
+				<Services />
+				<Technologies />
+				<Prouds />
+
 				<HeroHome />
 				<FeaturesBlocks />
 				<FeaturesZigZag />
@@ -33,7 +41,7 @@ function Home() {
 				<Newsletter />
 			</main>
 
-			<Banner />
+			{/* <Banner /> */}
 
 			{/*  Site footer */}
 			<Footer />
