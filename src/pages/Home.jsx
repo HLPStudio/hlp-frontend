@@ -34,8 +34,8 @@ function Home() {
 				<Technologies />
 				<Prouds />
 
-				<HeroHome />
-				<FeaturesBlocks />
+				{/* <HeroHome /> */}
+				{/* <FeaturesBlocks /> */}
 				<FeaturesZigZag />
 				<Testimonials />
 				<Newsletter />
