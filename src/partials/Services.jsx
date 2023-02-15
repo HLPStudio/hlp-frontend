@@ -6,15 +6,15 @@ function Services() {
 	return (
 		<section>
 			<div className="max-w-6xl mx-auto px-4 sm:px-6">
-				<div className="pb-12 md:pb-20">
+				<div className="pb-16 md:pb-20">
 
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
-						<h2 className="h2 mb-4">Our Services</h2>
+						<h2 className="h2 mb-4">Our services</h2>
 					</div>
 
 					{/* Items */}
-					<div className="max-w-sm mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 items-start md:max-w-2xl lg:max-w-none" data-aos-id-blocks>
+					<div className="max-w-lg md:max-w-none mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 items-start" data-aos-id-blocks>
 
 						{/* 1st item */}
 						<div className="relative flex flex-col items-center" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">

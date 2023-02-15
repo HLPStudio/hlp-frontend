@@ -5,15 +5,18 @@ import Carousel from '../partials/Carousel';
 import Services from '../partials/Services';
 import Technologies from '../partials/Technologies';
 import Prouds from '../partials/Prouds';
+import OurTeam from '../partials/OurTeam';
+import Testimonials from '../partials/Testimonials';
+import BlogList from '../partials/BlogList';
 
 import PageIllustration from '../partials/PageIllustration';
 import HeroHome from '../partials/HeroHome';
 import FeaturesBlocks from '../partials/FeaturesBlocks';
 import FeaturesZigZag from '../partials/FeaturesZigzag';
-import Testimonials from '../partials/Testimonials';
 import Newsletter from '../partials/Newsletter';
 import Banner from '../partials/Banner';
 import Footer from '../partials/Footer';
+import Stats from '../partials/Stats';
 
 function Home() {
 	return (
@@ -33,12 +36,15 @@ function Home() {
 				<Services />
 				<Technologies />
 				<Prouds />
+				<Stats />
+				<OurTeam />
+				<Testimonials />
+				<BlogList />
 
 				{/* <HeroHome /> */}
 				{/* <FeaturesBlocks /> */}
-				<FeaturesZigZag />
-				<Testimonials />
-				<Newsletter />
+				{/* <FeaturesZigZag /> */}
+				{/* <Newsletter /> */}
 			</main>
 
 			{/* <Banner /> */}

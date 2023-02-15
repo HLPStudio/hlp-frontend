@@ -7,7 +7,7 @@ function Prouds() {
 
 	return (
 		<section>
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 relative pb-12 md:pb-20 nav-link focus:isolate">
+			<div className="max-w-6xl mx-auto px-4 sm:px-6 relative pb-16 md:pb-20 focus:isolate">
 
 				{/* Section header */}
 				<div className="max-w-3xl mx-auto text-center pb-2 md:pb-4">
