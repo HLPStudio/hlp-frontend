@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import imgLogo from '../assets/images/logo.svg';
+import imgLogo from "../assets/images/logo.svg";
 
 function Header() {
 
@@ -82,7 +82,7 @@ function Header() {
 					</button>
 
 					{/* mobile navigation */}
-					<nav id="mobile-nav" ref={mobileNav} className="absolute top-full z-40 left-0 w-full px-4 sm:px-6 font-FuturaStd font-semibold text-base overflow-hidden shadow-lg transition-all duration-300 ease-in-out" style={mobileNavOpen ? { maxHeight: mobileNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: .8 }}>
+					<nav id="mobile-nav" ref={mobileNav} className="absolute top-full z-40 left-0 w-full px-4 sm:px-6 font-FuturaStd font-semibold text-base overflow-hidden bg-white shadow-lg transition-all duration-300 ease-in-out" style={mobileNavOpen ? { maxHeight: mobileNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: .8 }}>
 						<ul className="">
 							<li>
 								<Link to="/portfolio" className="flex justify-center py-2 decoration-4 decoration-[#ffe900] underline-offset-[6px] hover:underline">Portfolio</Link>
