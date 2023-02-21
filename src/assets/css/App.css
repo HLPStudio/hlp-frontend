@@ -1,0 +1,45 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import 'Header.css';
+
+/* font-face : Proxima Nova */
+@font-face {
+	font-family: "ProximaNova";
+	src: url("../fonts/proximanova-reg-webfont.woff") format('woff');
+	font-weight: 400; /* regular */
+}
+@font-face {
+	font-family: "ProximaNova";
+	src: url("../fonts/proximanova-sbold-webfont.woff") format('woff');
+	font-weight: 600; /* semi-bold */
+}
+@font-face {
+	font-family: "ProximaNova";
+	src: url("../fonts/proximanova-bold-webfont.woff") format('woff');
+	font-weight: 700; /* bold */
+}
+
+/* font-face : Futura Std */
+@font-face {
+	font-family: "FuturaStd";
+	src: url("../fonts/FuturaStd-Book.woff") format('woff');
+	font-weight: 400; /* regular */
+}
+@font-face {
+	font-family: "FuturaStd";
+	src: url("../fonts/FuturaStd-Heavy.woff") format('woff');
+	font-weight: 600; /* semi-bold */
+}
+@font-face {
+	font-family: "FuturaStd";
+	src: url("../fonts/FuturaStd-Bold.woff") format('woff');
+	font-weight: 700; /* bold */
+}
+
+
+#root {
+  margin: 0;
+  padding: 0;
+}

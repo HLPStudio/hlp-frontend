@@ -5,7 +5,12 @@ module.exports = {
 		"./src/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				'ProximaNova': ['ProximaNova', 'Arial', 'sans-serif'],
+				'FuturaStd': ['FuturaStd', 'Arial', 'sans-serif'],
+			}
+		},
 	},
 	plugins: [],
 }
