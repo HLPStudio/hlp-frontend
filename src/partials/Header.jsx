@@ -46,7 +46,7 @@ function Header() {
 
 	return (
 		<div className={`w-full h-14 top-0 right-0 bg-white z-50 ${scrollDown ? (mobileNavOpen ? 'sticky' : 'sticky shadow-lg') : (mobileNavOpen ? 'relative' : 'relative shadow-lg')}`}>
-			<div className="w-full h-14 flex items-center justify-between px-4 bg-white">
+			<div className="max-w-7xl w-full h-14 mx-auto flex items-center justify-between bg-white">
 				<a href="/" className="">
 					<img className="h-10" src={imgLogo} alt="HLP Logo" />
 				</a>

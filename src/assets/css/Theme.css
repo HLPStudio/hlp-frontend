@@ -1,0 +1,10 @@
+/* Typography */
+.h1 {
+	@apply font-FuturaStd font-bold text-[36px] md:text-[44px] lg:text-[48px] leading-[1.2];
+}
+.h2 {
+	@apply font-FuturaStd font-semibold text-[36px] md:text-[44px] lg:text-[48px] leading-[1.2];
+}
+.h3 {
+	@apply font-FuturaStd font-semibold text-[32px] leading-[1.2];
+}

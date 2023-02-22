@@ -2,6 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import 'Theme.css';
 @import 'Header.css';
 
 /* font-face : Proxima Nova */
